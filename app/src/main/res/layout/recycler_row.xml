@@ -33,21 +33,13 @@
             android:layout_marginStart="@dimen/default_start_margin"
             android:gravity="start"
             style="@style/TextAppearance.Custom.Default"
-            android:textColor="@color/white"
+            android:textColor="@color/default_text_color"
             app:layout_constraintStart_toEndOf="@id/coinsItemImageView"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@id/favouriteImageView"
             tools:text="Bitcoin"/>
 
-        <TextView
-            android:id="@+id/coinsItemSymbolTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/TextAppearance.Custom.Default"
-            android:textColor="@color/subtitle_text_color"
-            app:layout_constraintStart_toStartOf="@id/coinsItemNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/coinsItemNameTextView"
-            tools:text="BTC"/>
+
 
 
         <TextView
@@ -58,21 +50,10 @@
             style="@style/TextAppearance.Custom.H2.Bold"
             android:textColor="@color/default_text_color"
             app:layout_constraintStart_toStartOf="@id/coinsItemNameTextView"
-            app:layout_constraintTop_toBottomOf="@id/coinsItemSymbolTextView"
+            app:layout_constraintTop_toBottomOf="@id/coinsItemNameTextView"
             tools:text="99879.45"/>
 
-        <TextView
-            android:id="@+id/coinsItemChangeTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/default_start_margin"
-            android:layout_marginBottom="@dimen/small_margin"
-            style="@style/TextAppearance.Custom.H3"
-            app:layout_constraintStart_toEndOf="@id/coinsItemPriceTextView"
-            app:layout_constraintBottom_toBottomOf="@id/coinsItemPriceTextView"
-            tools:text="+123.45"
-            tools:textColor="@color/green"
-            tools:drawableStart="@drawable/ic_baseline_arrow_upward_24"/>
+
 
         <ImageView
             android:id="@+id/favouriteImageView"
