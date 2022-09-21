@@ -22,11 +22,13 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.Listener {
     private var coinModels: ArrayList<Coin>? = null
     private var recyclerViewAdapter: RecyclerViewAdapter? = null
     private var compositeDisposable: CompositeDisposable? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         compositeDisposable = CompositeDisposable()
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
@@ -49,8 +51,8 @@ class MainActivity : AppCompatActivity(), RecyclerViewAdapter.Listener {
     private fun handleResponse(coinList: List<Coin>) {
         coinModels = ArrayList(coinList)
 
-        coinModels.let {
-            recyclerViewAdapter = RecyclerViewAdapter(it!!, this@MainActivity)
+        coinModels?.let {
+            recyclerViewAdapter = RecyclerViewAdapter(it, this@MainActivity)
             binding.recyclerView.adapter = recyclerViewAdapter
         }
     }

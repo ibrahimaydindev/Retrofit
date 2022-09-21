@@ -33,10 +33,10 @@ class RecyclerViewAdapter( var coinList: ArrayList<Coin>, private var listener: 
     }
     override fun onBindViewHolder(holder: RowHolder, position: Int) {
         holder.itemView.setOnClickListener {
-            listener.onItemClick(coinList.get(position))
+            listener.onItemClick(coinList[position])
         }
         holder.itemView.setBackgroundColor(Color.parseColor(colors[position % 8]))
-        holder.binding.textName.text = coinList.get(position).currency
-        holder.binding.textPrice.text = coinList.get(position).price
+        holder.binding.textName.text = coinList[position].currency
+        holder.binding.textPrice.text = coinList[position].price
     }
 }
