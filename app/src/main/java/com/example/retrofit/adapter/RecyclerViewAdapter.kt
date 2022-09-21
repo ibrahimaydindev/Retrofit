@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofit.databinding.RecyclerRowBinding
 import com.example.retrofit.model.Coin
 
-class RecyclerViewAdapter(private val coinList: ArrayList<Coin>, private val listener: Listener) :
+class RecyclerViewAdapter( var coinList: ArrayList<Coin>, private var listener: Listener) :
     RecyclerView.Adapter<RecyclerViewAdapter.RowHolder>() {
     interface Listener {
         fun onItemClick(coin: Coin)
@@ -36,7 +36,7 @@ class RecyclerViewAdapter(private val coinList: ArrayList<Coin>, private val lis
             listener.onItemClick(coinList.get(position))
         }
         holder.itemView.setBackgroundColor(Color.parseColor(colors[position % 8]))
-        holder.binding.coinsItemNameTextView.text = coinList.get(position).currency
-        holder.binding.coinsItemPriceTextView.text = coinList.get(position).price
+        holder.binding.textName.text = coinList.get(position).currency
+        holder.binding.textPrice.text = coinList.get(position).price
     }
 }
